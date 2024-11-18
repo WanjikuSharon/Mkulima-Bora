@@ -140,7 +140,7 @@
 <div class="wrapper" >
 
     <div class="wrapper">
-      <header class="jumbotron bg-gradient-warning">
+      <header class="jumbotron bg-green">
         <div class="container">
           <div class="row row-header">
             <div class="col-12 col-sm-6">
