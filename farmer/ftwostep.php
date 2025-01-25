@@ -182,7 +182,7 @@ $user = $_SESSION['farmer_login_user'];
 
  
          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-           <div class="card card-body bg-gradient-warning">
+           <div class="card card-body" style="background-color: #008000;">
  
  
  

@@ -1,44 +1,81 @@
 <?php
 session_start();
-require('../sql.php'); // Includes Login Script
+require('../sql.php'); // Ensure the database connection file is correct
 
-$email=$_SESSION['farmer_login_user'];
-$res=mysqli_query($conn,"select * from farmerlogin where email='$email'");
-$count=mysqli_num_rows($res);
-if($count>0){
-    $otp=rand(11111,99999);
-    mysqli_query($conn,"update farmerlogin set otp='$otp' where email ='$email'");
-	$html="Your otp verification code for Agriculture Portal is ".$otp;
-	$_SESSION['farmer_login_user'];
-    smtp_mailer($email,'OTP Verification',$html); 
-    echo "yes";
+// Get the farmer's email from the session
+$email = $_SESSION['farmer_login_user'];
+
+// Debugging: Check if session email is set
+if (empty($email)) {
+    die("Error: Farmer email not found in session.");
 }
-else{
-    echo "not exist";
+
+// Fetch farmer details from the database
+$res = mysqli_query($conn, "SELECT * FROM farmerlogin WHERE email='$email'");
+$count = mysqli_num_rows($res);
+
+// If the farmer exists, generate and send OTP
+if ($count > 0) {
+    $otp = rand(11111, 99999); // Generate a 5-digit OTP
+
+    // Update the OTP in the database
+    if (mysqli_query($conn, "UPDATE farmerlogin SET otp='$otp' WHERE email='$email'")) {
+        // Prepare email content
+        $subject = "OTP Verification for Agriculture Portal";
+        $html = "Your OTP verification code for Agriculture Portal is: <strong>" . $otp . "</strong>";
+
+        // Debugging: Check values before sending
+        echo "Subject: " . $subject . "<br>";
+        echo "To: " . $email . "<br>";
+        echo "Message: " . $html . "<br>";
+
+        // Send the email
+        if (smtp_mailer($email, $subject, $html)) {
+            echo "OTP sent successfully!";
+        } else {
+            echo "Failed to send OTP.";
+        }
+    } else {
+        echo "Error updating OTP: " . mysqli_error($conn);
+    }
+} else {
+    echo "Farmer not found.";
 }
- 
-function smtp_mailer($to,$subject, $msg){
-	require_once("../smtp/class.phpmailer.php");
-	$mail = new PHPMailer(); 
-	$mail->IsSMTP(); 
-	$mail->SMTPDebug = 0; 
-	$mail->SMTPAuth = TRUE; 
-	$mail->SMTPSecure = 'ssl'; 
-	$mail->Host = "smtp.gmail.com";
-	$mail->Port = 465; 
-	$mail->IsHTML(true);
-	$mail->CharSet = 'UTF-8';
-	$mail->Username = "sharonwanjiku.a@gmail.com";   
-    $mail->Password = "kbct plsg mcyx ytts"; 	
-    $mail->SetFrom("sharonwanjiku.a@gmail.com");  
-	$mail->Subject = $subject;
-	$mail->Body =$msg;
-	$mail->AddAddress($to);
-	if(!$mail->Send()){
-		return 0;
-	}else{
-		return 1;
-	}
+
+// Function to send email using PHPMailer
+function smtp_mailer($to, $subject, $msg) {
+    require_once("../smtp/class.phpmailer.php"); // Include PHPMailer class
+
+    $mail = new PHPMailer();
+    $mail->IsSMTP();
+    $mail->SMTPDebug = 2; // Set to 2 for debugging, set to 0 for production
+    $mail->SMTPAuth = TRUE;
+    $mail->SMTPSecure = 'ssl'; // Use SSL encryption
+    $mail->Host = "smtp.gmail.com";
+    $mail->Port = 465; // Gmail SMTP port
+    $mail->IsHTML(true); // Enable HTML email format
+    $mail->CharSet = 'UTF-8'; // Set character encoding
+
+    // Use the same Gmail credentials as in csend.php
+    $mail->Username = "sharonwanjiku292@gmail.com"; // Your Gmail address
+    $mail->Password = "crgbutiiiuajwfjo"; // Replace with your app password
+
+    $mail->SetFrom("sharonwanjiku292@gmail.com", "Agriculture Portal"); // Sender email
+    $mail->Subject = $subject; // Email subject
+    $mail->Body = $msg; // Email body
+    $mail->AddAddress($to); // Recipient email
+
+    // Debugging: Check if variables are set properly
+    if (empty($to)) {
+        echo "Error: Recipient email is empty.";
+        return false;
+    }
+
+    if (!$mail->Send()) {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+        return false;
+    } else {
+        return true;
+    }
 }
 ?>
-

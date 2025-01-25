@@ -193,7 +193,8 @@ function getdistrict(val) {
 
  
          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-           <div class="card card-body bg-gradient-warning">
+         <div class="card card-body" style="background-color: #008000;">
+
  
  
  
@@ -287,7 +288,7 @@ function getdistrict(val) {
 			  
 		  
 			    <div class="form-group row">
-                <label for="staffid" class="col-md-3 col-form-label text-white" >City <strong class="text-default"> *</strong></label>
+                <label for="staffid" class="col-md-3 col-form-label text-white" >Ward <strong class="text-default"> *</strong></label>
                 <div class="col-md-9">
                   <input class="form-control" type="text" name="city"  required="true"/>
                 </div>				
@@ -365,8 +366,8 @@ function getdistrict(val) {
                 <div class="offset-sm-2 col-5 ">
                     <h5>Our Address</h5>
                     <address>
-		              Vishwothama Nagar, Bantakal<br>
-		              Udupi - 574 115, Karnataka<br>		              
+                    Ruaraka, Nairobi<br>
+                    Survey , P. O. Box 56808 – 00200, Nairobi, Kenya<br>		              
 		              <div class="btn-group text-center" role="group">
                     <a role="button" class="btn btn-primary" href="tel:+919448936339"><i class="fa fa-phone"></i> Call</a>
                     <a role="button" class="btn btn-info" href="tel:+918233294006"> <i class="fa fa-fax"></i> Fax</a>
@@ -400,7 +401,7 @@ function getdistrict(val) {
 		   <hr>
            <div class="row justify-content-center">             
                      <div class="col-auto">					
-                    <p>&copy; Copyright 2023 AGRICULTURE PORTAL, All Rights Reserved </p>
+                    <p>&copy; Copyright 2024 MKULIMA BORA AGRICULTURE PORTAL, All Rights Reserved </p>
                 </div>
            </div>
         </div>

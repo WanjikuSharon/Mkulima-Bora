@@ -165,7 +165,7 @@
                     </div>
                     <div class="mt-2">
                         <span class="uppercase text-sm text-gray-600 font-bold">Mobile Number</span>
-                        <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" type="phone" id="user_mobile" name="user_mobile" pattern="^[6-9]{1}[0-9]{9}$" title="Enter Valid 10 digit Mobile Number (Ex. 76435654XX)" placeholder="Enter your Mobile Number">
+                        <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" type="phone" id="user_mobile" name="user_mobile" pattern="^(?:07|01)[0-9]{8}$" title="Enter Valid 10 digit Mobile Number (Ex. 76435654XX)" placeholder="Enter your Mobile Number">
                     </div>
                     <div class="mt-2">
                         <span class="uppercase text-sm text-gray-600 font-bold">Email Id</span>

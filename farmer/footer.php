@@ -7,8 +7,8 @@
                 <div class="offset-sm-2 col-5 ">
                     <h5>Our Address</h5>
                     <address>
-		              Vishwothama Nagar, Bantakal<br>
-		              Udupi - 574 115, Karnataka<br>		              
+		              Ruaraka, Nairobi<br>
+		              Survey , P. O. Box 56808 – 00200, Nairobi, Kenya<br>		              
 		              <div class="btn-group text-center" role="group">
                     <a role="button" class="btn btn-primary" href="tel:+919448936339"><i class="fa fa-phone"></i> Call</a>
                     <a role="button" class="btn btn-info" href="tel:+918233294006"> <i class="fa fa-fax"></i> Fax</a>
@@ -42,7 +42,7 @@
 		   <hr>
            <div class="row justify-content-center">             
                      <div class="col-auto">					
-                    <p>&copy; Copyright 2023 AGRICULTURE PORTAL, All Rights Reserved </p>
+                    <p>&copy; Copyright 2024 MKULIMA BORA AGRICULTURE PORTAL, All Rights Reserved </p>
                 </div>
            </div>
         </div>
