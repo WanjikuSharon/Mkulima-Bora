@@ -79,7 +79,7 @@ $query4 = "SELECT * from farmerlogin where email='$user_check'";
 					<tr class="font-weight-bold text-default">
 					<th><center>Crop Name</center></th>
 					<th><center>Quantity (in KG)</center></th>
-					<th><center>Cost borne by farmer per KG (in Rs)</center></th>
+					<th><center>Cost borne by farmer per KG (in Ksh)</center></th>
 					<th><center>Upload CROP Details</center></th>
 					
         </tr>
@@ -92,20 +92,20 @@ $query4 = "SELECT * from farmerlogin where email='$user_check'";
                         <div class="form-group" >
 						<select id="crops" name="crops" class="form-control ">
 							<option value="">Select Crop</option>
-  							<option value="arhar">Arhar</option>
-							<option value="bajra">Bajra</option>  
+  							<option value="arhar">Njahe</option>
+							<option value="bajra">Millet</option>  
 							<option value="barley">Barley</option>
 							<option value="cotton">Cotton</option>	
-							<option value="gram">Gram</option>
-							<option value="jowar">Jowar</option>
-							<option value="jute">Jute</option>
+							<option value="gram">GreenGram</option>
+							<option value="jowar">Red Beans</option>
+							<option value="jute">Kamande</option>
 							<option value="lentil">Lentil</option>
 							<option value="maize">Maize</option>
-							<option value="moong">Moong</option>
-							<option value="ragi">Ragi</option>
+							<option value="moong">Spinach</option>
+							<option value="ragi">Apples</option>
   							<option value="rice">Rice</option>
 							<option value="soyabean">Soyabean</option>
-							<option value="urad">Urad</option>
+							<option value="urad">Peas</option>
 							<option value="wheat">Wheat</option>
 						</select>					
 						</div>					

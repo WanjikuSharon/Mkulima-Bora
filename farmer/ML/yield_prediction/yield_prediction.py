@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 
 # Load the dataset
-df = pd.read_csv("ML/yield_prediction/crop_production_karnataka.csv")
+df = pd.read_csv(r'C:\xampp\htdocs\Projects\agriculture-portal\farmer\ML\yield_prediction\crop_production_karnataka.csv')
 
 # Drop the Crop_Year column
 df = df.drop(['Crop_Year'], axis=1)
